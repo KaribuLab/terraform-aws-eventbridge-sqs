@@ -5,7 +5,7 @@ resource "aws_cloudwatch_event_bus" "custom" {
 
 resource "aws_cloudwatch_event_rule" "rules" {
   for_each = { for rule in var.rules : rule.name => rule }
-
+  depends_on = [aws_cloudwatch_event_bus.custom]
   name           = each.value.name
   description    = lookup(each.value, "description", "")
   event_pattern  = each.value.event_pattern
