@@ -21,3 +21,11 @@ Este módulo de Terraform crea reglas de EventBridge que envían eventos a colas
 | event_pattern | Patrón de eventos (JSON)   | string | Sí        |
 | sqs_queue_arn | ARN de la cola SQS destino | string | Sí        |
 | sqs_queue_url | URL de la cola SQS destino | string | Sí        |
+
+## Outputs
+
+| Nombre        | Descripción                                       | Tipo                |
+| ------------- | ------------------------------------------------- | ------------------- |
+| `eventbus_arn`| ARN del eventbus creado                           | string              |
+| `eventbus_name`| Nombre del eventbus creado                       | string              |
+| `rule_arns`   | Mapa de ARNs de las reglas creadas (key: nombre)  | map(string)         |
